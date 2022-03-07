@@ -127,3 +127,39 @@ Install suggested plugins を選択して、ユーザー名やパスワードな
   1. ビルドの実行をクリック
 
 ### using a Jenkinsfile
+
+以下のような構成の Jenkinsfile を基に Jenkinsfile の理解を進めていく
+
+```
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
+```
+
+- `agent`文は必須で、pipeline を実行するもの（executor）と wrokspace を指定するためのもの
+
+- `stage`文と`step`文も必須で、何を実行するか、どのステージで実行するかを指定するためｎもの
+
+#### Build
+
+#### Test
+
+#### Deploy
