@@ -4,7 +4,7 @@ pipeline {
         stage('Stage 1') {
             steps {
                 echo 'Hello world!' 
-                echo '${env.BUILD_ID}  ${env.BUILD_URL}' 
+                sh "echo ${env.BUILD_ID}  ${env.BUILD_URL}"
             }
         }
     }
